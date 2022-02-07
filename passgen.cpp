@@ -5,7 +5,8 @@
 #include <fstream>
 
 std::string passGen(int diff, int len) {
-	std::string s = "            ", chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=";
+	std::string s = "", chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=";
+	s.resize(len + 3);
 	if (diff == 1) {
 		for (int i = 0; i < len; ++i) {
 			s[i] = chars[rand() % 52];
@@ -76,4 +77,3 @@ int main() {
 	s = passRedo(diff, len, r, s);
 	passSave(r,s);
 }
-
